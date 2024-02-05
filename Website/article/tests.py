@@ -21,7 +21,7 @@ class ArticlePostModelTests(TestCase):
             title='test',
             body='test',
             created=timezone.now() + datetime.timedelta(days=30)
-        )
+            )
         self.assertIs(future_article.was_created_recently(), False)
 
     def test_was_created_recently_with_seconds_before_article(self):
@@ -33,7 +33,7 @@ class ArticlePostModelTests(TestCase):
             title='test1',
             body='test1',
             created=timezone.now() - datetime.timedelta(seconds=45)
-        )
+            )
         self.assertIs(seconds_before_article.was_created_recently(), True)
 
     def test_was_created_recently_with_hours_before_article(self):
@@ -45,7 +45,7 @@ class ArticlePostModelTests(TestCase):
             title='test2',
             body='test2',
             created=timezone.now() - datetime.timedelta(hours=3)
-        )
+            )
         self.assertIs(hours_before_article.was_created_recently(), False)
 
     def test_was_created_recently_with_days_before_article(self):
@@ -57,7 +57,7 @@ class ArticlePostModelTests(TestCase):
             title='test3',
             body='test3',
             created=timezone.now() - datetime.timedelta(days=5)
-        )
+            )
         self.assertIs(months_before_article.was_created_recently(), False)
 
 
@@ -71,7 +71,7 @@ class ArtitclePostViewTests(TestCase):
             author=author,
             title='test4',
             body='test4',
-        )
+            )
         article.save()
         self.assertIs(article.total_views, 0)
 
@@ -89,7 +89,7 @@ class ArtitclePostViewTests(TestCase):
             author=author,
             title='test5',
             body='test5',
-        )
+            )
         article.save()
 
         sleep(0.5)
