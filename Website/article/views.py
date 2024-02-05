@@ -26,7 +26,7 @@ from django.views import View
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 
-# from my_blog.settings import LOGGING
+# from Website.settings import LOGGING
 # import logging
 
 # logging.config.dictConfig(LOGGING)
