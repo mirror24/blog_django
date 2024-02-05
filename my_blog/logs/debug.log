@@ -1,0 +1,862 @@
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+Watching dir C:\demo\product\my_blog\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\admin\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\auth\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\contenttypes\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\sessions\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\messages\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\staticfiles\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\django\contrib\sites\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\allauth\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\allauth\account\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\allauth\socialaccount\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\allauth\socialaccount\providers\github\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\allauth\socialaccount\providers\weibo\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\password_reset\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\taggit\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\imagekit\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\ckeditor\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\mptt\locale with glob **/*.mo.
+Watching dir C:\demo\product\venv\lib\site-packages\notifications\locale with glob **/*.mo.
+Watching dir C:\demo\product\my_blog\article\locale with glob **/*.mo.
+Watching dir C:\demo\product\my_blog\userprofile\locale with glob **/*.mo.
+Watching dir C:\demo\product\my_blog\comment\locale with glob **/*.mo.
+Watching dir C:\demo\product\my_blog\notice\locale with glob **/*.mo.
+(0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+(0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:56:35.947615' AND "django_session"."session_key" = '7f9kw09ew11qfm1tuhj30sact47o0kfd'); args=('2024-01-25 00:56:35.947615', '7f9kw09ew11qfm1tuhj30sact47o0kfd')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+"GET /accounts/login/ HTTP/1.1" 302 0
+(0.003) SELECT COUNT(*) AS "__count" FROM "article_articlepost"; args=()
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:56:36.047619' AND "django_session"."session_key" = '7f9kw09ew11qfm1tuhj30sact47o0kfd'); args=('2024-01-25 00:56:36.047619', '7f9kw09ew11qfm1tuhj30sact47o0kfd')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Exception while resolving variable 'unread_count' in template 'article/list.html'.
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\demo\product\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [unread_count] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x000002554DE2F6A8>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <User: mirror>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000002554DBCACF8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000002554DC63518>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'articles': <Page 1 of 2>, 'order': None, 'search': '', 'column': None, 'tag': None}, {}]
+Exception while resolving variable 'unread_count' in template 'article/list.html'.
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\demo\product\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [unread_count] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x000002554DE2F6A8>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <User: mirror>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000002554DBCACF8>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000002554DC63518>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'articles': <Page 1 of 2>, 'order': None, 'search': '', 'column': None, 'tag': None}, {}]
+(0.001) SELECT "article_articlepost"."id", "article_articlepost"."author_id", "article_articlepost"."column_id", "article_articlepost"."avatar", "article_articlepost"."title", "article_articlepost"."body", "article_articlepost"."created", "article_articlepost"."updated", "article_articlepost"."total_views" FROM "article_articlepost" ORDER BY "article_articlepost"."created" DESC  LIMIT 3; args=()
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 1; args=(1,)
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'article' AND "django_content_type"."model" = 'articlepost'); args=('article', 'articlepost')
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 9); args=(7, 9)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 9; args=(9,)
+(0.001) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 3; args=(3,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 8); args=(7, 8)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 8; args=(8,)
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 3; args=(3,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 7); args=(7, 7)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 7; args=(7,)
+"GET / HTTP/1.1" 200 29370
+"GET /media/article/20240124/%E5%A4%B4%E5%83%8F.jpg HTTP/1.1" 304 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:56:52.378142' AND "django_session"."session_key" = '7f9kw09ew11qfm1tuhj30sact47o0kfd'); args=('2024-01-25 00:56:52.378142', '7f9kw09ew11qfm1tuhj30sact47o0kfd')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = '7f9kw09ew11qfm1tuhj30sact47o0kfd'; args=('7f9kw09ew11qfm1tuhj30sact47o0kfd',)
+(0.003) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('7f9kw09ew11qfm1tuhj30sact47o0kfd'); args=('7f9kw09ew11qfm1tuhj30sact47o0kfd',)
+"GET /userprofile/logout/ HTTP/1.1" 302 0
+(0.000) SELECT COUNT(*) AS "__count" FROM "article_articlepost"; args=()
+(0.000) SELECT "article_articlepost"."id", "article_articlepost"."author_id", "article_articlepost"."column_id", "article_articlepost"."avatar", "article_articlepost"."title", "article_articlepost"."body", "article_articlepost"."created", "article_articlepost"."updated", "article_articlepost"."total_views" FROM "article_articlepost" ORDER BY "article_articlepost"."created" DESC  LIMIT 3; args=()
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 1; args=(1,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 9); args=(7, 9)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 9; args=(9,)
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 3; args=(3,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 8); args=(7, 8)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 8; args=(8,)
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 3; args=(3,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 7); args=(7, 7)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 7; args=(7,)
+"GET /article/article-list/ HTTP/1.1" 200 27668
+"GET /userprofile/login/ HTTP/1.1" 200 8916
+"GET /userprofile/register/ HTTP/1.1" 200 9037
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."username" = 'mirror'; args=('mirror',)
+(0.000) SELECT (1) AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'  LIMIT 1; args=('z8ndn6g03v47l606xlr0zpsnwtpxy0ye',)
+(0.000) BEGIN; args=None
+(0.001) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") SELECT 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye', 'ZDI5ZGZlZWM0Mzc5ZWUxNmU2MmQ4M2QxNTk5NmViY2MyOTE3NTdmNjp7fQ==', '2024-02-08 00:56:57.331943'; args=('z8ndn6g03v47l606xlr0zpsnwtpxy0ye', 'ZDI5ZGZlZWM0Mzc5ZWUxNmU2MmQ4M2QxNTk5NmViY2MyOTE3NTdmNjp7fQ==', '2024-02-08 00:56:57.331943')
+(0.002) UPDATE "auth_user" SET "last_login" = '2024-01-25 00:56:57.335942' WHERE "auth_user"."id" = 5; args=('2024-01-25 00:56:57.335942', 5)
+(0.000) BEGIN; args=None
+(0.001) UPDATE "django_session" SET "session_data" = 'N2UxZDAxYWU5MjMxZjFkYjc3M2IyMDkwM2E2Y2JhN2FhZGJlMmI4Njp7Il9hdXRoX3VzZXJfaWQiOiI1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlNjBiZTFkMTQxOWI1YjI2YjZiMmI3ZmFmNmFhZjI4OGUyNmEzZmNiIn0=', "expire_date" = '2024-02-08 00:56:57.341942' WHERE "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'; args=('N2UxZDAxYWU5MjMxZjFkYjc3M2IyMDkwM2E2Y2JhN2FhZGJlMmI4Njp7Il9hdXRoX3VzZXJfaWQiOiI1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJlNjBiZTFkMTQxOWI1YjI2YjZiMmI3ZmFmNmFhZjI4OGUyNmEzZmNiIn0=', '2024-02-08 00:56:57.341942', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+"POST /userprofile/login/ HTTP/1.1" 302 0
+(0.001) SELECT COUNT(*) AS "__count" FROM "article_articlepost"; args=()
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:56:57.359960' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:56:57.359960', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+Exception while resolving variable 'unread_count' in template 'article/list.html'.
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\demo\product\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [unread_count] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x000002554DCCB8C8>>, 'request': <WSGIRequest: GET '/article/article-list/'>, 'user': <SimpleLazyObject: <User: mirror>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000002554DCBACC0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000002554DD903C8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'articles': <Page 1 of 2>, 'order': None, 'search': '', 'column': None, 'tag': None}, {}]
+Exception while resolving variable 'unread_count' in template 'article/list.html'.
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "C:\demo\product\venv\lib\site-packages\django\template\context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'unread_count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [unread_count] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x000002554DCCB8C8>>, 'request': <WSGIRequest: GET '/article/article-list/'>, 'user': <SimpleLazyObject: <User: mirror>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x000002554DCBACC0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000002554DD903C8>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'articles': <Page 1 of 2>, 'order': None, 'search': '', 'column': None, 'tag': None}, {}]
+(0.000) SELECT "article_articlepost"."id", "article_articlepost"."author_id", "article_articlepost"."column_id", "article_articlepost"."avatar", "article_articlepost"."title", "article_articlepost"."body", "article_articlepost"."created", "article_articlepost"."updated", "article_articlepost"."total_views" FROM "article_articlepost" ORDER BY "article_articlepost"."created" DESC  LIMIT 3; args=()
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 1; args=(1,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 9); args=(7, 9)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 9; args=(9,)
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 3; args=(3,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 8); args=(7, 8)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 8; args=(8,)
+(0.000) SELECT "article_articlecolumn"."id", "article_articlecolumn"."title", "article_articlecolumn"."created" FROM "article_articlecolumn" WHERE "article_articlecolumn"."id" = 3; args=(3,)
+(0.000) SELECT DISTINCT "taggit_tag"."id", "taggit_tag"."name", "taggit_tag"."slug" FROM "taggit_tag" INNER JOIN "taggit_taggeditem" ON ("taggit_tag"."id" = "taggit_taggeditem"."tag_id") WHERE ("taggit_taggeditem"."content_type_id" = 7 AND "taggit_taggeditem"."object_id" = 7); args=(7, 7)
+(0.000) SELECT COUNT(*) AS "__count" FROM "comment_comment" WHERE "comment_comment"."article_id" = 7; args=(7,)
+"GET /article/article-list/ HTTP/1.1" 200 29370
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:15.828119' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:15.828119', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.001) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 5 ORDER BY "django_admin_log"."action_time" DESC  LIMIT 10; args=(5,)
+"GET /admin/ HTTP/1.1" 200 12472
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+"GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:24.256399' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:24.256399', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialaccount"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialaccount"; args=()
+(0.000) SELECT "socialaccount_socialaccount"."id", "socialaccount_socialaccount"."user_id", "socialaccount_socialaccount"."provider", "socialaccount_socialaccount"."uid", "socialaccount_socialaccount"."last_login", "socialaccount_socialaccount"."date_joined", "socialaccount_socialaccount"."extra_data", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "socialaccount_socialaccount" INNER JOIN "auth_user" ON ("socialaccount_socialaccount"."user_id" = "auth_user"."id") ORDER BY "socialaccount_socialaccount"."id" DESC; args=()
+"GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 3952
+(0.002) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:24.304132' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:24.304132', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.002) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3223
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:25.877551' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:25.877551', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 5 ORDER BY "django_admin_log"."action_time" DESC  LIMIT 10; args=(5,)
+"GET /admin/ HTTP/1.1" 200 12472
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:26.924074' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:26.924074', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialtoken"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialtoken"; args=()
+(0.000) SELECT "socialaccount_socialtoken"."id", "socialaccount_socialtoken"."app_id", "socialaccount_socialtoken"."account_id", "socialaccount_socialtoken"."token", "socialaccount_socialtoken"."token_secret", "socialaccount_socialtoken"."expires_at", "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key", "socialaccount_socialaccount"."id", "socialaccount_socialaccount"."user_id", "socialaccount_socialaccount"."provider", "socialaccount_socialaccount"."uid", "socialaccount_socialaccount"."last_login", "socialaccount_socialaccount"."date_joined", "socialaccount_socialaccount"."extra_data", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "socialaccount_socialtoken" INNER JOIN "socialaccount_socialapp" ON ("socialaccount_socialtoken"."app_id" = "socialaccount_socialapp"."id") INNER JOIN "socialaccount_socialaccount" ON ("socialaccount_socialtoken"."account_id" = "socialaccount_socialaccount"."id") INNER JOIN "auth_user" ON ("socialaccount_socialaccount"."user_id" = "auth_user"."id") ORDER BY "socialaccount_socialtoken"."id" DESC; args=()
+"GET /admin/socialaccount/socialtoken/ HTTP/1.1" 200 4629
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:26.964945' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:26.964945', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3223
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:28.387431' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:28.387431', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) SELECT "django_admin_log"."id", "django_admin_log"."action_time", "django_admin_log"."user_id", "django_admin_log"."content_type_id", "django_admin_log"."object_id", "django_admin_log"."object_repr", "django_admin_log"."action_flag", "django_admin_log"."change_message", "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined", "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_admin_log" INNER JOIN "auth_user" ON ("django_admin_log"."user_id" = "auth_user"."id") LEFT OUTER JOIN "django_content_type" ON ("django_admin_log"."content_type_id" = "django_content_type"."id") WHERE "django_admin_log"."user_id" = 5 ORDER BY "django_admin_log"."action_time" DESC  LIMIT 10; args=(5,)
+"GET /admin/ HTTP/1.1" 200 12472
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:29.331167' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:29.331167', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialapp"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialapp"; args=()
+(0.000) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp" ORDER BY "socialaccount_socialapp"."id" DESC; args=()
+"GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 4663
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:29.377942' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:29.377942', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3223
+(0.000) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:30.627725' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:30.627725', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp" WHERE "socialaccount_socialapp"."id" = 1; args=(1,)
+(0.000) SELECT "django_site"."id", "django_site"."domain", "django_site"."name" FROM "django_site" INNER JOIN "socialaccount_socialapp_sites" ON ("django_site"."id" = "socialaccount_socialapp_sites"."site_id") WHERE "socialaccount_socialapp_sites"."socialapp_id" = 1 ORDER BY "django_site"."domain" ASC; args=(1,)
+(0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'socialaccount' AND "django_content_type"."model" = 'socialapp'); args=('socialaccount', 'socialapp')
+(0.000) SELECT "django_site"."id", "django_site"."domain", "django_site"."name" FROM "django_site" ORDER BY "django_site"."domain" ASC; args=()
+"GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 7758
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:30.678600' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:30.678600', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3223
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:33.144538' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:33.144538', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.001) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) BEGIN; args=None
+(0.000) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp" WHERE "socialaccount_socialapp"."id" = 1; args=(1,)
+(0.000) SELECT "django_site"."id", "django_site"."domain", "django_site"."name" FROM "django_site" INNER JOIN "socialaccount_socialapp_sites" ON ("django_site"."id" = "socialaccount_socialapp_sites"."site_id") WHERE "socialaccount_socialapp_sites"."socialapp_id" = 1 ORDER BY "django_site"."domain" ASC; args=(1,)
+(0.000) SELECT "django_site"."id", "django_site"."domain", "django_site"."name" FROM "django_site" WHERE "django_site"."id" IN (1) ORDER BY "django_site"."domain" ASC; args=(1,)
+(0.001) UPDATE "socialaccount_socialapp" SET "provider" = 'github', "name" = 'Github', "client_id" = '6e02a11e30f585ae89a2', "secret" = 'c96bce7539bcc61d29bd41814150846aa09e725f', "key" = '' WHERE "socialaccount_socialapp"."id" = 1; args=('github', 'Github', '6e02a11e30f585ae89a2', 'c96bce7539bcc61d29bd41814150846aa09e725f', '', 1)
+(0.000) SELECT "django_site"."id" FROM "django_site" INNER JOIN "socialaccount_socialapp_sites" ON ("django_site"."id" = "socialaccount_socialapp_sites"."site_id") WHERE "socialaccount_socialapp_sites"."socialapp_id" = 1 ORDER BY "django_site"."domain" ASC; args=(1,)
+(0.000) INSERT INTO "django_admin_log" ("action_time", "user_id", "content_type_id", "object_id", "object_repr", "action_flag", "change_message") VALUES ('2024-01-25 00:57:33.155553', 5, 19, '1', 'Github', 2, '[]'); args=['2024-01-25 00:57:33.155553', 5, 19, '1', 'Github', 2, '[]']
+"POST /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 302 0
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:33.162534' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:33.162534', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialapp"; args=()
+(0.000) SELECT COUNT(*) AS "__count" FROM "socialaccount_socialapp"; args=()
+(0.000) SELECT "socialaccount_socialapp"."id", "socialaccount_socialapp"."provider", "socialaccount_socialapp"."name", "socialaccount_socialapp"."client_id", "socialaccount_socialapp"."secret", "socialaccount_socialapp"."key" FROM "socialaccount_socialapp" ORDER BY "socialaccount_socialapp"."id" DESC; args=()
+"GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 4867
+(0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-01-25 00:57:33.208534' AND "django_session"."session_key" = 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye'); args=('2024-01-25 00:57:33.208534', 'z8ndn6g03v47l606xlr0zpsnwtpxy0ye')
+(0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 5; args=(5,)
+"GET /admin/jsi18n/ HTTP/1.1" 200 3223
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+File C:\demo\product\my_blog\my_blog\settings.py. is_changed: False, is_new: True
+File C:\demo\product\my_blog\my_blog\settings.py previous mtime: None, current mtime: 1706144540.9494712
+C:\demo\product\my_blog\my_blog\settings.py notified as changed. Signal results: [(<function translation_file_changed at 0x000002554CACC378>, None)].
+C:\demo\product\my_blog\my_blog\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /article/article-list/ HTTP/1.1" 200 29370
+Internal Server Error: /article/article-detail/9999/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 153, in article_detail
+    article = ArticlePost.objects.get(id=id)
+  File "C:\demo\product\venv\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\demo\product\venv\lib\site-packages\django\db\models\query.py", line 408, in get
+    self.model._meta.object_name
+article.models.ArticlePost.DoesNotExist: ArticlePost matching query does not exist.
+"GET /article/article-detail/9999/ HTTP/1.1" 500 83030
+C:\demo\product\my_blog\article\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\demo\product\my_blog\my_blog\settings.py changed, reloading.
+ERROR 2024-01-25 09:25:45,078 log 16004 34688 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:30:02,854 log 16004 34688 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:34:52,761 log 16004 34688 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:38:37,146 log 16004 34688 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:39:49,705 log 16004 34688 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:41:31,098 log 16004 34688 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:43:50,001 log 30888 36220 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
+ERROR 2024-01-25 09:43:53,438 log 30888 36220 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1021, in find_library
+    return parser.libraries[name]
+KeyError: 'my_filters_and_tags'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\demo\product\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\demo\product\my_blog\article\views.py", line 139, in article_list
+    return render(request, 'article/list.html', context)
+  File "C:\demo\product\venv\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\demo\product\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1078, in load
+    lib = find_library(parser, name)
+  File "C:\demo\product\venv\lib\site-packages\django\template\defaulttags.py", line 1025, in find_library
+    name, "\n".join(sorted(parser.libraries)),
+django.template.exceptions.TemplateSyntaxError: 'my_filters_and_tags' is not a registered tag library. Must be one of:
+account
+admin_list
+admin_modify
+admin_static
+admin_urls
+cache
+i18n
+imagekit
+l10n
+log
+mptt_admin
+mptt_tags
+notifications_tags
+socialaccount
+static
+staticfiles
+tz
